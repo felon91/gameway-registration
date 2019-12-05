@@ -8,52 +8,38 @@
 </head>
 <body>
 <div class="container">
-<!--  <div class="popup">-->
-<!--    <div data-popup="close" class="popup__center">-->
-<!--      <div class="popup__block modal">-->
-<!--        <button data-popup="close" class="modal__close">X</button>-->
-<!--        <div class="modal__block">-->
-<!--          <iframe width="560" height="315" src="https://www.youtube.com/embed/ptq91sqTUDI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
   <div class="reg-auth">
     <div data-type="auth" class="reg-auth__block reg-auth__block--auth">
-      <div class="reg-auth__error error">
-        <p class="error__text">Учетной записи с таким email не существует</p>
-      </div>
+      <div class="reg-auth__notification"></div>
       <h1 class="reg-auth__title">Авторизация</h1>
-      <form class="reg-auth__form form" action="#">
+      <form id="authorization" class="reg-auth__form form" action="#">
         <div class="form__input">
-          <input type="email" placeholder="Email" name="email">
+          <input class="email" type="email" placeholder="Email" required name="email">
         </div>
         <div class="form__input">
-          <input type="password" placeholder="Пароль" name="pass">
+          <input class="pass" type="password" placeholder="Пароль" required name="pass">
         </div>
         <div class="form__input">
           <button type="submit">Войти</button>
         </div>
         <div class="form__link">
-          <a href="#reset">Забыли пароль?</a>
+          <a class="switchForm" data-block="auth" href="#reset">Забыли пароль?</a>
         </div>
       </form>
       <div class="reg-auth__bottom">
         <p>Нет аккаунта?</p>
-        <a href="#reg">Зарегистрироваться</a>
+        <a class="switchForm" data-block="auth" href="#reg">Зарегистрироваться</a>
       </div>
     </div>
     <div data-type="reg" class="reg-auth__block reg-auth__block--reg">
-      <div class="reg-auth__error error">
-        <p class="error__text">Учетной записи с таким email не существует</p>
-      </div>
+      <div class="reg-auth__notification"></div>
       <h1 class="reg-auth__title">Регистрация</h1>
-      <form class="reg-auth__form form" action="#">
+      <form id="registration" class="reg-auth__form form" action="#">
         <div class="form__input">
-          <input type="email" placeholder="Email" name="email">
+          <input class="email" type="email" placeholder="Email" required name="email">
         </div>
         <div class="form__input">
-          <input type="password" placeholder="Пароль" name="pass">
+          <input class="pass" type="password" placeholder="Пароль" required name="pass">
         </div>
         <div class="form__input">
           <button type="submit">Регистрация</button>
@@ -64,17 +50,15 @@
       </form>
       <div class="reg-auth__bottom">
         <p>Уже есть аккаунт?</p>
-        <a class="switchForm" href="#auth">Войти</a>
+        <a class="switchForm" data-block="reg" href="#auth">Войти</a>
       </div>
     </div>
     <div data-type="reset" class="reg-auth__block reg-auth__block--reset">
-      <div class="reg-auth__success success">
-        <p class="success__text">Мы отправили письмо на ivanov@gmail.com. Перейдите по ссылке в письме, чтобы сменить пароль.</p>
-      </div>
+      <div class="reg-auth__notification"></div>
       <h1 class="reg-auth__title">Смена пароля</h1>
-      <form class="reg-auth__form form" action="#">
+      <form id="reset" class="reg-auth__form form" action="#">
         <div class="form__input">
-          <input type="email" placeholder="Email" name="email">
+          <input class="email" type="email" placeholder="Email" required name="email">
         </div>
         <div class="form__input">
           <button type="submit">Регистрация</button>
@@ -85,7 +69,7 @@
       </form>
       <div class="reg-auth__bottom">
         <p>Уже есть аккаунт?</p>
-        <a href="#auth">Войти</a>
+        <a class="switchForm" data-block="reset" href="#auth">Войти</a>
       </div>
     </div>
     <img class="reg-auth__man" src="img/man.png" alt="">

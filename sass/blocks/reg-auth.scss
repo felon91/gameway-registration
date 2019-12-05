@@ -81,3 +81,9 @@
     margin: 0;
   }
 }
+
+.reg-auth__notification {
+  opacity: 1;
+  transition-duration: 500ms;
+  transition-property: opacity;
+}
