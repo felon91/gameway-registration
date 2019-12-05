@@ -1,0 +1,121 @@
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin min-max($min-width, $max-width, $padding) {
+  min-width: $min-width;
+  max-width: $max-width;
+  padding: 0 $padding;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+@mixin adaptive-video() {
+  position: relative;
+  padding-bottom: 56.25%; /* задаёт высоту контейнера для 16:9 (если 4:3 — поставьте 75%) */
+  height: 0;
+  overflow: hidden;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+@mixin visually-hidden() {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0,0,0,0);
+  overflow: hidden;
+}
+
+@function px-to-rem($size, $basicSize: 16px) {
+  @return $size / $basicSize#{rem};
+}
+
+@mixin dynamicText($minSizePercent, $maxSize, $minSize, $minWidthPx, $maxWidth, $minWidth) {
+  font-size: calc(#{$minSizePercent} + (#{$maxSize} - #{$minSize}) * (100vw - #{$minWidthPx}) / (#{$maxWidth} - #{$minWidth}));
+}
+
+@mixin button
+(
+  $firstColor: $first,
+  $secondColor: $white,
+  $variant: first
+) {
+  @if ($variant != first) {
+    color: $firstColor;
+    border: 1px solid $firstColor;
+    background: transparent;
+    box-shadow: none;
+  } @else {
+    color: $secondColor;
+    border: 1px solid $firstColor;
+    box-shadow: 0px 4px 20px $firstColor;
+    background-color: $first;
+  }
+  text-decoration: none;
+  display: inline-block;
+  width: 384px;
+  font-weight: 700;
+  font-size: px-to-rem(26px);
+  line-height: px-to-rem(50px);
+  padding-top: 1%;
+  padding-bottom: 1.2%;
+  border-radius: 5px;
+  transform: skew(-20deg);
+  transition-duration: 0.3s;
+  transition-property: color, box-shadow, background-color;
+  margin: 35px 0;
+  position: relative;
+  overflow: hidden;
+
+  @if ($variant != first) {
+    &:hover {
+      color: $secondColor;
+      background-color: $first;
+      box-shadow: 0px 4px 50px $firstColor;
+    }
+  } @else {
+    &:hover {
+      box-shadow: 0px 4px 50px $firstColor;
+    }
+  }
+
+  svg {
+    position: relative;
+    top: 7px;
+    fill: $secondColor;
+    transition-property: fill;
+    transition-duration: 0.3s;
+  }
+
+  span {
+    display: block;
+    text-align: center;
+    transform: skew(20deg);
+  }
+
+  @media (max-width: 860px) {
+    margin: 25px auto;
+    width: 95%;
+    display: block;
+    font-size: px-to-rem(20px);
+    line-height: px-to-rem(42px);
+  }
+}

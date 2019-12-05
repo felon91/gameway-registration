@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+/**
+ * Основные стили
+ **/
+
+html {
+  font-size: 16px;
+  color: $black;
+  background-color: #030303;
+}
+
+body {
+  font-family: 'gothampro', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  hyphens: auto;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  @include min-max(1200px, 100%, 0);
+  background: url("../img/bg.jpg") center / cover no-repeat;
+  height: 100vh;
+}
+
+html {
+  height: 100%;
+}

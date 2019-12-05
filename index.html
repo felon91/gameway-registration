@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>GameWay RP | GTA 5</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, width=device-width">
+	<link rel="stylesheet" href="css/style.min.css" type="text/css" />
+</head>
+<body>
+<div class="container">
+<!--  <div class="popup">-->
+<!--    <div data-popup="close" class="popup__center">-->
+<!--      <div class="popup__block modal">-->
+<!--        <button data-popup="close" class="modal__close">X</button>-->
+<!--        <div class="modal__block">-->
+<!--          <iframe width="560" height="315" src="https://www.youtube.com/embed/ptq91sqTUDI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+  <div class="reg-auth">
+    <div data-type="auth" class="reg-auth__block reg-auth__block--auth">
+      <div class="reg-auth__error error">
+        <p class="error__text">Учетной записи с таким email не существует</p>
+      </div>
+      <h1 class="reg-auth__title">Авторизация</h1>
+      <form class="reg-auth__form form" action="#">
+        <div class="form__input">
+          <input type="email" placeholder="Email" name="email">
+        </div>
+        <div class="form__input">
+          <input type="password" placeholder="Пароль" name="pass">
+        </div>
+        <div class="form__input">
+          <button type="submit">Войти</button>
+        </div>
+        <div class="form__link">
+          <a href="#reset">Забыли пароль?</a>
+        </div>
+      </form>
+      <div class="reg-auth__bottom">
+        <p>Нет аккаунта?</p>
+        <a href="#reg">Зарегистрироваться</a>
+      </div>
+    </div>
+    <div data-type="reg" class="reg-auth__block reg-auth__block--reg">
+      <div class="reg-auth__error error">
+        <p class="error__text">Учетной записи с таким email не существует</p>
+      </div>
+      <h1 class="reg-auth__title">Регистрация</h1>
+      <form class="reg-auth__form form" action="#">
+        <div class="form__input">
+          <input type="email" placeholder="Email" name="email">
+        </div>
+        <div class="form__input">
+          <input type="password" placeholder="Пароль" name="pass">
+        </div>
+        <div class="form__input">
+          <button type="submit">Регистрация</button>
+        </div>
+        <div class="form__link">
+          <a href="#">Есть промокод?</a>
+        </div>
+      </form>
+      <div class="reg-auth__bottom">
+        <p>Уже есть аккаунт?</p>
+        <a class="switchForm" href="#auth">Войти</a>
+      </div>
+    </div>
+    <div data-type="reset" class="reg-auth__block reg-auth__block--reset">
+      <div class="reg-auth__success success">
+        <p class="success__text">Мы отправили письмо на ivanov@gmail.com. Перейдите по ссылке в письме, чтобы сменить пароль.</p>
+      </div>
+      <h1 class="reg-auth__title">Смена пароля</h1>
+      <form class="reg-auth__form form" action="#">
+        <div class="form__input">
+          <input type="email" placeholder="Email" name="email">
+        </div>
+        <div class="form__input">
+          <button type="submit">Регистрация</button>
+        </div>
+        <div class="form__link">
+          <a href="#">Есть промокод?</a>
+        </div>
+      </form>
+      <div class="reg-auth__bottom">
+        <p>Уже есть аккаунт?</p>
+        <a href="#auth">Войти</a>
+      </div>
+    </div>
+    <img class="reg-auth__man" src="img/man.png" alt="">
+  </div>
+<script src="js/all.min.js"></script>
+</body>
+</html>

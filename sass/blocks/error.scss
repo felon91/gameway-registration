@@ -1,0 +1,19 @@
+.error {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: $red;
+  width: 100%;
+  padding-left: 40px;
+  padding-right: 25px;
+  box-sizing: border-box;
+}
+
+.error__text {
+  line-height: 1.1;
+  margin: 0;
+  padding: 12px 0 12px 40px;
+  color: $white;
+  font-size: 16px;
+  background: url('../img/warning.svg') left center no-repeat;
+}
