@@ -1,6 +1,7 @@
 document.querySelector('#registration').addEventListener('submit', registration);
 document.querySelector('#authorization').addEventListener('submit', authorization);
 document.querySelector('#reset').addEventListener('submit', resetPassword);
+document.querySelector('.form__promo-link').addEventListener('click', showDiscountForm);
 
 Array.from(document.querySelectorAll('.switchForm')).forEach(function(item) {
   item.addEventListener('click', slideBlock);
@@ -72,6 +73,12 @@ function showNotification(options) {
       $notificationElement.innerHTML = '';
     }, 500);
   }, 5000);
+}
+
+function showDiscountForm(evt) {
+  evt.preventDefault();
+  this.nextElementSibling.querySelector('input').removeAttribute('disabled');
+  this.nextElementSibling.classList.add('show');
 }
 
 showNotification({

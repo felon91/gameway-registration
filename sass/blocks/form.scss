@@ -30,7 +30,7 @@
     line-height: 26px;
     text-align: center;
     padding: 10px 0;
-    width: 183px;
+    width: 200px;
     color: $white;
     display: block;
     cursor: pointer;
@@ -50,8 +50,72 @@
   margin: 20px 0;
   a {
     color: $white;
+    text-decoration: none;
     &:hover {
-      text-decoration: none;
+      color: $first;
     }
+  }
+}
+
+.form__discount {
+  display: flex;
+  margin: 7px 0;
+  input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $white;
+    width: 131px;
+    font-size: 18px;
+    line-height: 20px;
+    height: 0px;
+    color: $white;
+    outline: none;
+    padding: 0;
+    margin-right: 20px;
+    &::placeholder {
+      color: $white;
+    }
+    &:focus {
+      border-color: $first;
+    }
+  }
+  button {
+    background-color: $btnBg;
+    border: 1px solid $first;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    padding: 7px 0;
+    width: 130px;
+    color: $white;
+    display: block;
+    cursor: pointer;
+    outline: none;
+    transform: translate3d(70px, 0, 0);
+    opacity: 0;
+    visibility: hidden;
+    transition-duration: 500ms;
+    transition-property: background-color, border-color;
+    &:hover, &:focus {
+      background-color: $btnHover;
+      border-color: $btnHover;
+    }
+  }
+}
+
+.show.form__discount {
+  input {
+    animation-name: discountInput;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+  }
+  button {
+    visibility: visible;
+    animation-name: discountButton;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    animation-delay: 500ms;
   }
 }
